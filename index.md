@@ -3,4 +3,5 @@
 I like CSE15L\
 This is really cool\
 [Second Page](google.html)\
-[Image](lab-report-1-week-0.html)
+[Image](lab-report-1-week-0.html)\
+[Lab Report1](lab-report-1.html)
