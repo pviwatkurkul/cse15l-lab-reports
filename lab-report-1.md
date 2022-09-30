@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lab Report 1 #
 ## Setting up Visual Code ##
 
@@ -49,3 +50,6 @@
 * As you can see we now have logged into the server and executed ls at the same time.
 
 **That wraps up our tutorial for getting familiar with ssh and seeing what you can do within the terminal.**
+=======
+#Lab Report#
+>>>>>>> 034e626c1209d748d8b5f79708035d39a6936d6a
