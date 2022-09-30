@@ -2,7 +2,7 @@
 # Lab Report 1 #
 ## Setting up Visual Code ##
 
-* [https://code.visualstudio.com/download]
+* [VSCode](https://code.visualstudio.com/download)
 ![Image](vscode.png)
 * Follow the link and follow the download button specific to your OS.
 * Set up VSCode specific to the programming langauge you want, in this case it's Java.
