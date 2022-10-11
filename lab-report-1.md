@@ -20,7 +20,8 @@
 
 
 ![Image](commands.png)
-* In this screenshot, the command "ls" shows the current files or content in your directory. "cd" navigates through directories and "cat" opens files.
+![Image](perl5.png)
+* In this screenshot, the command "ls" shows the current files or content in your directory. "cd" navigates through directories and "cat" prints files. Perl5 currently has no files in the remote server but serves as a sub-directoy in the home directoy.
 
 ## Moving Files over SSH with scp ##
 * First we want to move files from the local computer to a remote server with the command "scp".
@@ -35,6 +36,9 @@
 
 ## SSH Keys ##
 * We want to create a private and public key that will allow us to login into our remote server seamlessly without having to type in our password everytime.
+* First we want to log onto our remote server using **ssh cs15lfa22zz@ieng6.ucsd.edu**
+* After logging in we want to make a .ssh folder in our remote server files to store the key.
+![Image](ssh_folder.png)
 * We will use the command $ ssh-keygen on our local computer first, which will create the key.
 ![Image](ssh-key].png)
 * Next we will transfer our local key saved and save it onto our remove server.
@@ -47,7 +51,7 @@
 * We want to shortcut some tasks by running our previous commands with the same time as opening the remote server.
 * Using the original command **ssh cs15lfa22xx@ieng6.ucsd.edu** followed with a basic command like "ls" we can get the list of the directory and login to the remote server at the same time.
 ![Image](more_commands.png)
-* As you can see we now have logged into the server and executed ls at the same time.
+* With this command, it allows you to execute commands within the remote server, HOWEVER, it does not log you into the server itself.   
 
 **That wraps up our tutorial for getting familiar with ssh and seeing what you can do within the terminal.**
 =======
