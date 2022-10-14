@@ -203,7 +203,7 @@
 
 * As you can see this code is gonna make use of *assertArrayEquals* to compare the expected output of an array to the input that has been run with the method.
 
-* Unsprisingly, the test did not pass and outputted an error that shows a sympton of the bug in the test.
+* Unsurprisingly, the test did not pass and outputted an error that shows a sympton of the bug in the test.
 
 ~~~
 {
