@@ -168,3 +168,114 @@
 * For the implementation using an else statement to complement the if statement is useful in that if the  *if* statement returns false it will immediately return the erorr message.
 
 **This concludes the implementation of a search engine within a web server**
+
+
+## **Identifying Bugs and Fixing Them** ##
+
+
+**reverseInPlace method within ArrayExamples.java**
+
+~~~
+{
+    static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+}
+~~~
+
+
+* To figure out if there is a bug in the first place we want to create some tests. I created a test that would add multiple elements and run the method to see if it would compare correctly to the expected output.
+
+~~~
+{
+@Test
+  public void testReverseMany(){
+    int[] input1 = {3, 4, 5, 7, 6};
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{6, 7, 5, 4, 3}, input1);
+  }
+}
+~~~
+
+* As you can see this code is gonna make use of *assertArrayEquals* to compare the expected output of an array to the input that has been run with the method.
+
+* Unsprisingly, the test did not pass and outputted an error that shows a sympton of the bug in the test.
+
+~~~
+{
+    1) testReverseMany(ArrayTests)
+arrays first differed at element [3]; expected:<4> but was:<7>
+}
+~~~
+
+* With some connections, we can see that the array did not reverse correctly and instead erased the value of replaced element rather than switching the values. At index 4, the element should've been 4 as expected, but was instead 4, the original position of the original input.
+
+~~~
+{
+    static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+}
+~~~
+* The bug falls in the way the values are being switched, as you can see arr[i] = arr[arr.length]- i -1]; is not remembering the value of arr[i] and is just being replaced.
+
+* The symptom relates to the bug because the symptom(output) shows that the values aren't being reversed correctly, and in correlation to the bug will cause it to print {6, 7, 5, 7, 6}
+
+**Filter method in ListExamples.java**
+
+* Again, to see if there is a bug in the first place we have to test the methods.
+
+~~~
+{
+      @Test
+    public void testFilter(){
+        List<String> input = new ArrayList<>();
+        List<String> test = new ArrayList<>();
+        input.add("cat");
+        input.add("dog");
+        input.add("cow");
+        input.add("lamb");
+        test.add("cat");
+        test.add("dog");
+        test.add("cow");
+        test.add("lamb");
+
+        assertArrayEquals(input.toArray(), ListExamples.filter(input, new check()).toArray());
+}
+~~~
+
+* The test here is creating two ArrayLists, one that will be used on the method, and one that is the expected output
+
+* assertArrayEquals() is compare the expected output to the array that is being called onto to the method through the use of calling the class that is holding the interface method.
+
+~~~
+{
+    2) testFilter(ListTests)
+arrays first differed at element [0]; expected:<[cat]> but was:<[lamb]>
+}
+~~~
+* The symptom or the output is the result of the list not being equal to the expected out which should've added all the elements in order from the back. 
+ 
+* The output is a result of adding every element to the front of the list rather than the back causing it to not be in order.
+
+~~~
+{
+     static List<String> filter(List<String> list, StringChecker sc) {
+        List<String> result = new ArrayList<>();
+        for(String s: list) {
+            if(sc.checkString(s)) {
+            result.add(0, s);
+            }
+        }
+        return result;
+    }
+}
+~~~
+
+* The bug lies in the line that states *result.add(0,s)*. As you can see the list is adding new elements that are strings to the front of the list rather than to the back*
+
+* The symptom and the bug correlate to each other in this case because as a result of the add method being implemented wrong, it's causing the list to be out of order which is causing the test to fail.
