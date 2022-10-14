@@ -2,8 +2,9 @@
 ## **Creating a Search Engine on a Local/Remote Web Server** ##
 
 
-* Today's instructions will be how to create a local/remote webserver, and apply some functionality to it through the use of URL's.
-* First, we want to have a class that can handle urls and create the functionality of a search engine.
+* This lab will contain the explanation of integrating a search engine into a local/remote webserver and also the debugging of bugs and how to identify them.
+
+* First, we're going to start with the implementation of a search engine and how it was done with a concise walkthrough of the code.
 ~~~ 
 {
     class Handler implements URLHandler {
@@ -40,13 +41,13 @@
 }         
 ~~~
 
-* Adding a String to the list is fundamental in being able to search/test the code so with the picture down below, it is shown that adding through the url is successful.
 
 **Add String** 
 
+* Adding a String to the list is fundamental in being able to search/test the code so with the picture down below, it is shown that adding through the url is successful.
 ![Image](addused.png)
 
-*To break down what is exactly happening we can break down the code by parts.
+* To break down what is exactly happening we can break down the code by parts.
 
 ~~~
 {
@@ -71,9 +72,9 @@
 
 * What's happening next is that getQuery() is gonna obtain the next piece of the url such as when ? is apart of the code. 
 
-* By using getQuery().split("="), the left side of == and right side will be split into an array where it can get accessed. To prompt the adding of a string, it checks for an "s" on the left side of == and a string on the right side.
+* By using getQuery().split("="), the left side of = and right side will be split into an array where it can be accessed through indexing of an array. To prompt the adding of a string, it checks for an "s" on the left side of = and a string on the right side.
 
-* Next the string on the right side of == will be added to word which is a String ArrayList that will store the strings that are added into the webserver.
+* Next the string on the right side of = will be added to **word** which is a String ArrayList that will store the strings that are added into the webserver.
 
 * If the url does not contain an /add, s, or a string. A string error will be outputted such as "404 Not Found!";
 
@@ -92,6 +93,8 @@
 ~~~
 * This code is gonna utilize the .getPath() method to obtain the url from the passed in parameter.
 * url.getPath() is gonna check if the url contains a "/" and if it does it's gonna return a string statement as "No string" as its default.
+
+![Image](default.png)
 
 ~~~
 {
