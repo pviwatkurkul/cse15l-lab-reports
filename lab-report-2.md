@@ -116,9 +116,11 @@
 
 * As you can see it's gonna look for the string "/search", which shows that the user is going to search something.
 
-* Once that substring is located, the rest of the code will run. String[] parameters1 is a string list that will contain a string as a element on the left side of a "=".
+* Once that substring is located, the rest of the code will run. String[] parameters1 is a string list that will contain the strings on either side of "=" as an element. 
 
 * In this case we want to use "s=(whattosearch)" to indicate that we want to look for a set of strings that contain that search word. 
+
+* We will then use url.getQuery().split("=") to separate the s and the substring we are looking for.
 
 * Therefore, parameters1[0] will store "s" and parameters1[1] will store the substring we want to search for.
 
