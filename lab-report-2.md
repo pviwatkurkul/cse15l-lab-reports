@@ -42,6 +42,8 @@
 
 * Adding a String to the list is fundamental in being able to search/test the code so with the picture down below, it is shown that adding through the url is successful.
 
+**Add String** 
+
 ![Image](addused.png)
 
 *To break down what is exactly happening we can break down the code by parts.
@@ -74,3 +76,7 @@
 * Next the string on the right side of == will be added to word which is a String ArrayList that will store the strings that are added into the webserver.
 
 * If the url does not contain an /add, s, or a string. A string error will be outputted such as "404 Not Found!";
+
+**Search for String**
+
+![Image](searchused.png)
