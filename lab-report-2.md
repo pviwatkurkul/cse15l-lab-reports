@@ -279,3 +279,5 @@ arrays first differed at element [0]; expected:<[cat]> but was:<[lamb]>
 * The bug lies in the line that states *result.add(0,s)*. As you can see the list is adding new elements that are strings to the front of the list rather than to the back*
 
 * The symptom and the bug correlate to each other in this case because as a result of the add method being implemented wrong, it's causing the list to be out of order which is causing the test to fail.
+
+## This Concludes Lab Report 2 ##
