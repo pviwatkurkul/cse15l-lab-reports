@@ -212,7 +212,7 @@ arrays first differed at element [3]; expected:<4> but was:<7>
 }
 ~~~
 
-* With some connections, we can see that the array did not reverse correctly and instead erased the value of replaced element rather than switching the values. At index 4, the element should've been 4 as expected, but was instead 4, the original position of the original input.
+* With some connections, we can see that the array did not reverse correctly and instead erased the value of the replaced element rather than switching the values. At index 4, the element should've been 4 as expected, but was instead 7, the original position of the original input.
 
 ~~~
 {
@@ -252,7 +252,7 @@ arrays first differed at element [3]; expected:<4> but was:<7>
 
 * The test here is creating two ArrayLists, one that will be used on the method, and one that is the expected output
 
-* assertArrayEquals() is compare the expected output to the array that is being called onto to the method through the use of calling the class that is holding the interface method.
+* assertArrayEquals() is to compare the expected output to the array that is being called onto to the method. We can do that through the use of calling the class that is holding the interface method and running it.
 
 ~~~
 {
@@ -260,7 +260,7 @@ arrays first differed at element [3]; expected:<4> but was:<7>
 arrays first differed at element [0]; expected:<[cat]> but was:<[lamb]>
 }
 ~~~
-* The symptom or the output is the result of the list not being equal to the expected out which should've added all the elements in order from the back. 
+* The symptom or the output is the result of the list not being equal to the expected output which should've added all the elements in order from the back. 
  
 * The output is a result of adding every element to the front of the list rather than the back causing it to not be in order.
 
@@ -278,7 +278,7 @@ arrays first differed at element [0]; expected:<[cat]> but was:<[lamb]>
 }
 ~~~
 
-* The bug lies in the line that states *result.add(0,s)*. As you can see the list is adding new elements that are strings to the front of the list rather than to the back*
+* The bug lies in the line that states *result.add(0,s)*. As you can see the list is adding new elements that are strings to the front of the list rather than to the back
 
 * The symptom and the bug correlate to each other in this case because as a result of the add method being implemented wrong, it's causing the list to be out of order which is causing the test to fail.
 
