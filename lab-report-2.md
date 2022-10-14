@@ -120,11 +120,11 @@
 
 * In this case we want to use "s=(whattosearch)" to indicate that we want to look for a set of strings that contain that search word. 
 
-* Therefore, parameters[0] will store "s" and parameters[1] will store the substring we want to search for.
+* Therefore, parameters1[0] will store "s" and parameters1[1] will store the substring we want to search for.
 
-* Next using a for loop we're going to loop through the **word** ArrayList that will contain the strings that are added and see if the substring is contained within the list of strings.
+* Next, using a for loop, we're going to loop through the **word** ArrayList that will contain the strings that are added and see if the substring is contained within the list of strings.
 
-* If a string is found that matches the conditional, it will be added to the String list, **search**, which will be returned after all the strings are found and added.
+* If a string is found and matches the conditional, it will be added to the String list, **search**, which will be returned after all the strings are found and added.
 
 * String.format() will return the string list, displaying to the user what has been found with their search.
 
@@ -132,7 +132,7 @@
 
 ![Image](wrongquery.png)
 
-* We always want to consider the chance that something shouldn't be inputted or when a bug occurs. That's we want to prompt the user that something went wrong with the code or their input is invalid.
+* We always want to consider the chance when something shouldn't be inputted or is done incorrectly or when a bug occurs. That's where we want to prompt the user that there's an error.
 
 * For this case, we use ? to indicate that a query is contained with the URL. 
  
@@ -165,6 +165,6 @@
 
 * With the picture above there is a ? but nothing to follow the indication of a query. That's where we want to throw an error statement because that's not what we want or looking for. 
 
-* For the implementation using an else statement to complement the if statement is useful in that if the statement returns false it will immediately return the erorr message.
+* For the implementation using an else statement to complement the if statement is useful in that if the  *if* statement returns false it will immediately return the erorr message.
 
 **This concludes the implementation of a search engine within a web server**
