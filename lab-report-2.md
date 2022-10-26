@@ -80,7 +80,7 @@
 
 **Search for String**
 
-![Image](searchused.png)
+![Image](searchused1.png)
 
 * We're now gonna be focusing on the search part of the search engine.
 
