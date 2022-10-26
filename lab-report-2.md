@@ -225,30 +225,24 @@ arrays first differed at element [3]; expected:<4> but was:<7>
 ~~~
 * The bug falls in the way the values are being switched, as you can see arr[i] = arr[arr.length]- i -1]; is not remembering the value of arr[i] and is just being replaced.
 
+* To fix the bug we want to make sure the temp variable is actually being swapped with the other value as shown below.
+
+~~~
+{
+    for(int i = 0; i < arr.length/2; i += 1) {
+      temp = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = temp;
+    }
+}
+~~~
 * The symptom relates to the bug because the symptom(output) shows that the values aren't being reversed correctly, and in correlation to the bug will cause it to print {6, 7, 5, 7, 6}
 
 **Filter method in ListExamples.java**
 
 * Again, to see if there is a bug in the first place we have to test the methods.
 
-~~~
-{
-      @Test
-    public void testFilter(){
-        List<String> input = new ArrayList<>();
-        List<String> test = new ArrayList<>();
-        input.add("cat");
-        input.add("dog");
-        input.add("cow");
-        input.add("lamb");
-        test.add("cat");
-        test.add("dog");
-        test.add("cow");
-        test.add("lamb");
-
-        assertArrayEquals(input.toArray(), ListExamples.filter(input, new check()).toArray());
-}
-~~~
+![Image](testfilter.png)
 
 * The test here is creating two ArrayLists, one that will be used on the method, and one that is the expected output
 
@@ -280,6 +274,21 @@ arrays first differed at element [0]; expected:<[cat]> but was:<[lamb]>
 
 * The bug lies in the line that states *result.add(0,s)*. As you can see the list is adding new elements that are strings to the front of the list rather than to the back
 
+* An easy fix would be to change the argument values of the add to make it so it adds to the end of the list as shown below.
+
+~~~
+{
+static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(s);
+      }
+    }
+    return result;
+  }
+}
+~~~
 * The symptom and the bug correlate to each other in this case because as a result of the add method being implemented wrong, it's causing the list to be out of order which is causing the test to fail.
 
 ## This Concludes Lab Report 2 ##
