@@ -4,7 +4,7 @@
 
 ## -name ##
 * First we want to be in the working directory, and for this case is **docsearch**. It contains the directory *technical* and will contain multiple subdirectories and files within. 
-* This will be the working directory where we will execute the command-line, *find*, on and the multiple uses it has.
+* This will be the working directory where we will execute the command-line, *find* on, and the multiple uses it has.
 
 * Something that we are familiar with while using find is **-name**, this option allows us to search the name of the files with a specific string search.
 
@@ -28,7 +28,7 @@ technical/911report/chapter-13.5.txt
 * What this command is doing is that it traverses through the **technical** directory and the **911report** sub-directory and searches for files with a .txt in the name using the extension indicator as "". 
 * What's outputted is all the files with .txt in the file name within the 911report sub-directory. This is useful if we want to find the files that have a specific extension such as .pdf or .txt
 
-*A unique variation of **find** is very similar to the last option but with **-iname**.
+* A unique variation of **find** is very similar to the last option but with **-iname**.
 
 ~~~
 {
@@ -190,7 +190,7 @@ $ find -type d
 ~~~
 
 * In this case we move from the docsearch working directory to the government subdirectory inside of technical. We then run the same command and see that it's only showing the subdirectories within the government subdirectory compared to the last command.
-* This is useful again in seeing specific subdirectories based on the uesr location.
+* This is useful again in seeing specific subdirectories based on the user location.
 
 * We can also search for a different type with the similar commands.
 
