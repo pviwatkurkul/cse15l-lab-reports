@@ -10,10 +10,10 @@
 5 cp TestListExamples.java student-submission
 6 cp lib/hamcrest-core-1.3.jar student-submission
 7 cp lib/junit-4.13.2.jar student-submission
-8cd student-submission
+8 cd student-submission
 9 points=0
 10 file="ListExamples.java"
-11if [ -e $file ]
+11 if [ -e $file ]
 12 then  
 13    echo "the file exists"
 14 else 
