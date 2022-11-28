@@ -1,5 +1,6 @@
 # Lab Report 5 #
 
+* Block of code for bash script, grade.sh.
 ~~~
 {
 1 CPATH=".;../lib/hamcrest-core-1.3.jar;../lib/junit-4.13.2.jar"
