@@ -18,7 +18,7 @@ System.out.println(f.toString() + " is a directory"); Add print statement
 **/paths** 
 
 ![Image](1.png)
-* Searches for the first occurent of paths with the / command.
+* Searches for the first occurence of paths with the / command.
 
 **enter**
 
