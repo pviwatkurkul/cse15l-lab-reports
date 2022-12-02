@@ -27,7 +27,7 @@ System.out.println(f.toString() + " is a directory"); Add print statement
 
 **K**
 ![Image](3.png)
-* Moves up one live with the K key
+* Moves up one line with the K key
 
 **e(1)**
 ![Image](4.png)
